@@ -1,0 +1,14 @@
+{
+  "name": "speedy-sample",
+  "homepage": "https://github.com/gefangshuai/SpeedyFramework",
+  "authors": [
+    "葛方帅 <gefangshuai@163.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}

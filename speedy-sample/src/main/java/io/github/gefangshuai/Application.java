@@ -9,9 +9,9 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
  * Hello world!
  */
 @SpringBootApplication
-public class App extends SpringBootServletInitializer {
+public class Application extends SpringBootServletInitializer {
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     @Override
@@ -20,5 +20,5 @@ public class App extends SpringBootServletInitializer {
         return application;
     }
 
-    private static Class<App> applicationClass = App.class;
+    private static Class<Application> applicationClass = Application.class;
 }

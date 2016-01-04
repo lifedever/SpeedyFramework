@@ -1,4 +1,4 @@
 .idea
 *.iml
 logs
-**/static/lib
+**/public/libs

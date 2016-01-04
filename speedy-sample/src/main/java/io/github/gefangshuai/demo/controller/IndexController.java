@@ -1,5 +1,6 @@
 package io.github.gefangshuai.demo.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -9,8 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String index(){
+        Logger.getLogger(IndexController.class).debug("hello index");
+        System.out.println("dddd");
         return "index";
+    }
+
+    @RequestMapping("/hello")
+    public String hello() throws RuntimeException {
+        throw new RuntimeException("server error!");
     }
 }
