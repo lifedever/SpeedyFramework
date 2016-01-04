@@ -13,7 +13,8 @@
     <modules>
         <module>speedy-base</module>
         <module>speedy-utils</module>
-        <module>speedy-projects</module>
+        <module>speedy-ext</module>
+        <module>speedy-sample</module>
     </modules>
     <packaging>pom</packaging>
 
