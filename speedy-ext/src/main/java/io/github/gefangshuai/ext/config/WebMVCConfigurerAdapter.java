@@ -63,7 +63,7 @@ public class WebMVCConfigurerAdapter extends WebMvcAutoConfiguration.WebMvcAutoC
         return multipartResolver;
     }
 
-    @Bean
+    //@Bean
     public EmbeddedServletContainerCustomizer containerCustomizer() {
         return new EmbeddedServletContainerCustomizer(){
             @Override
