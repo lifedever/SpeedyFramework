@@ -1,6 +1,7 @@
-package io.github.gefangshuai.ext.config;
+package io.github.gefangshuai.ext.spring;
 
 import io.github.gefangshuai.ext.interceptor.NavigationHandlerInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import javax.servlet.ServletContext;
 import java.util.Locale;
 
 /**
@@ -21,7 +23,6 @@ import java.util.Locale;
  */
 @Configuration
 public class WebMVCConfigurerAdapter extends WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter {
-
     /**
      * 国际化配置
      */
@@ -65,7 +66,7 @@ public class WebMVCConfigurerAdapter extends WebMvcAutoConfiguration.WebMvcAutoC
 
     //@Bean
     public EmbeddedServletContainerCustomizer containerCustomizer() {
-        return new EmbeddedServletContainerCustomizer(){
+        return new EmbeddedServletContainerCustomizer() {
             @Override
             public void customize(ConfigurableEmbeddedServletContainer container) {
                 container.addErrorPages(new ErrorPage(HttpStatus.BAD_REQUEST, "/400"));
@@ -74,5 +75,4 @@ public class WebMVCConfigurerAdapter extends WebMvcAutoConfiguration.WebMvcAutoC
             }
         };
     }
-
 }
