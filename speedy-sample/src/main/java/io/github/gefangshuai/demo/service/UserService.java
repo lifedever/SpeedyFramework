@@ -13,8 +13,13 @@ import javax.annotation.Resource;
 @Service
 public class UserService extends CoreService<User, Long>{
 
-    @Resource
     private UserDao userDao;
+
+    @Resource
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+        super.coreDao = userDao;
+    }
 
     public User findByUsername(String username) {
         return userDao.findByUsername(username);

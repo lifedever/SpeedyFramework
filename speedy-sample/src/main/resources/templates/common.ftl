@@ -49,14 +49,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <@tags.shiro.guest>
                     <li><a href="/login">登录</a></li>
-                    <li><a href="/register">注册</a></li>
+                    <li><a href="/account/register">注册</a></li>
                 </@tags.shiro.guest>
                 <@tags.shiro.user>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false"><@tags.shiro.principal/> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/logout">退出</a></li>
+                            <li><a href="/account/logout">退出</a></li>
                         </ul>
                     </li>
                 </@tags.shiro.user>
@@ -64,4 +64,32 @@
         </div>
     </div>
 </nav>
+<div class="container" style="position: fixed; top: 40px;">
+    <div class="row">
+        <#if flash_message_success?exists>
+            <div class="fade in col-md-4 col-md-offset-5 alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                ${flash_message_success}
+            </div>
+        </#if>
+        <#if flash_message_error?exists>
+            <div class="fade in col-md-4 col-md-offset-5 alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                ${flash_message_error}
+            </div>
+        </#if>
+        <#if flash_message_warning?exists>
+            <div class="fade in col-md-4 col-md-offset-5 alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                ${flash_message_warning}
+            </div>
+        </#if>
+    </div>
+</div>
 </#macro>
