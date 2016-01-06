@@ -15,9 +15,11 @@ speedy-base详细介绍
 ```
 不需要在去繁琐依赖各个`spring-boot-starter-*`，默认集成的功能查看[pom.xml](https://github.com/gefangshuai/SpeedyFramework/blob/master/speedy-base/pom.xml)可知。
 
-值得注意的是，`speedy-base`默认去掉了`spring-boot-starter-logging`而集成了使用更加广泛灵活的`log4j`，只需要在项目的`/resources`目录下添加`log4j.properties`文件，并进行相关配置即可。
+`speedy-base`默认去掉了`spring-boot-starter-logging`而集成了使用更加广泛灵活的`log4j`，只需要在项目的`/resources`目录下添加`log4j.properties`文件，并进行相关配置即可。
 
 同时模板引擎默认继承了灵活高效的`Freemarker`。
+
+集成了对`jpa`的支持。
 
 # 基础扩展
 
