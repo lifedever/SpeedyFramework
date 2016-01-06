@@ -24,3 +24,25 @@ speedy-base详细介绍
 如果不满足自己的需求，想对其中的个别依赖进行修改，完全可以交由maven完成，这里举一个简单例子：
 
 ![举个栗子](../lizi.jpg)
+
+众所周知，Spring Boot 默认使用Tomcat作为Web容器，假如我们需要将Tomcat替换为Jetty，可以这么做（详细参见[Use Jetty instead of Tomcat](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto-use-jetty-instead-of-tomcat)）：
+
+使用Maven的`exclusions`功能，将`tomcat`剔除，然后再在自己的项目中添加`jetty`依赖即可，详细参见下面代码：
+
+```xml
+<dependency>
+    <groupId>io.github.gefangshuai</groupId>
+    <artifactId>speedy-base</artifactId>
+    <exclusions>
+        <exclusion>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+    </exclusions>
+    <version>0.0.1</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jetty</artifactId>
+</dependency>
+```
