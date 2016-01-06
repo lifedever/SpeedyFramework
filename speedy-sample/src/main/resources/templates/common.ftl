@@ -48,7 +48,8 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <@tags.shiro.guest>
-                    <li><a href="#">请登录!</a></li>
+                    <li><a href="/login">登录</a></li>
+                    <li><a href="/register">注册</a></li>
                 </@tags.shiro.guest>
                 <@tags.shiro.user>
                     <li class="dropdown">

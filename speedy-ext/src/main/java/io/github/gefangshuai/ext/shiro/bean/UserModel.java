@@ -44,12 +44,11 @@ public class UserModel extends CoreModel{
 
     /**
      * 加密用户，赋予用户salt值及md5 password
-     * @param user
      */
-    public static void encryptUser(UserModel user){
+    public void encryptUser(){
         String salt = HashUtils.generateSalt();
-        user.setSalt(salt);
-        String password = HashUtils.toMd5(user.getPassword(), salt);
-        user.setPassword(password);
+        this.setSalt(salt);
+        String password = HashUtils.toMd5(this.getPassword(), salt);
+        this.setPassword(password);
     }
 }

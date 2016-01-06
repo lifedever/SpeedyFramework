@@ -26,7 +26,7 @@ public abstract class ShiroExtConfiguration {
 
     @Bean(name = "ShiroRealmImpl")
     public ShiroExtRealm getShiroRealm() {
-        ShiroExtRealm serverRealm = shiroExtConfig().getShiroServerRealm();
+        ShiroExtRealm serverRealm = shiroExtConfig().getShiroExtRealm();
 
         HashedCredentialsMatcher credentialsMatcher = new HashedCredentialsMatcher();
         credentialsMatcher.setHashAlgorithmName("md5");
