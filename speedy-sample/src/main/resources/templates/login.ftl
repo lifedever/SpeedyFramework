@@ -1,5 +1,5 @@
 <#import "/spring.ftl" as spring>
-<#import "/shiro.ftl" as shiro>
+<#import "shiro.ftl" as shiro>
 <!DOCTYPE html>
 <html>
 <head>

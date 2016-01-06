@@ -2,7 +2,7 @@ package io.github.gefangshuai.demo.config;
 
 import io.github.gefangshuai.ext.shiro.ShiroExtConfiguration;
 import io.github.gefangshuai.ext.shiro.ShiroExtRealm;
-import io.github.gefangshuai.ext.shiro.bean.ExtShiroConfig;
+import io.github.gefangshuai.ext.shiro.bean.ShiroExtConfig;
 import io.github.gefangshuai.ext.shiro.bean.UserModel;
 import io.github.gefangshuai.ext.shiro.filter.ShiroExtFormAuthenticationFilter;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -23,8 +23,8 @@ import java.util.Set;
 public class ShiroConfiguration extends ShiroExtConfiguration {
 
     @Override
-    protected ExtShiroConfig extShiroConfig() {
-        return new ExtShiroConfig() {
+    protected ShiroExtConfig shiroExtConfig() {
+        return new ShiroExtConfig() {
             @Override
             public ShiroExtRealm getShiroServerRealm() {
                 return new ShiroExtRealm() {

@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by gefangshuai on 2016/1/5.
  */
-public interface ExtShiroConfig {
+public interface ShiroExtConfig {
     ShiroExtRealm getShiroServerRealm();
     ShiroExtFormAuthenticationFilter getShiroServerFormAuthenticationFilter();
 

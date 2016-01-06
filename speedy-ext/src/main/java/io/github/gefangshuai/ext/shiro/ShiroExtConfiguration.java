@@ -1,6 +1,6 @@
 package io.github.gefangshuai.ext.shiro;
 
-import io.github.gefangshuai.ext.shiro.bean.ExtShiroConfig;
+import io.github.gefangshuai.ext.shiro.bean.ShiroExtConfig;
 import io.github.gefangshuai.ext.shiro.filter.ShiroExtFormAuthenticationFilter;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
@@ -22,11 +22,11 @@ import java.util.Map;
 @Configuration
 public abstract class ShiroExtConfiguration {
 
-    protected abstract ExtShiroConfig extShiroConfig();
+    protected abstract ShiroExtConfig shiroExtConfig();
 
     @Bean(name = "ShiroRealmImpl")
     public ShiroExtRealm getShiroRealm() {
-        ShiroExtRealm serverRealm = extShiroConfig().getShiroServerRealm();
+        ShiroExtRealm serverRealm = shiroExtConfig().getShiroServerRealm();
 
         HashedCredentialsMatcher credentialsMatcher = new HashedCredentialsMatcher();
         credentialsMatcher.setHashAlgorithmName("md5");
@@ -80,7 +80,7 @@ public abstract class ShiroExtConfiguration {
      * @return
      */
     public ShiroExtFormAuthenticationFilter getCustomFormAuthenticationFilter() {
-        ShiroExtFormAuthenticationFilter authenticationFilter = extShiroConfig().getShiroServerFormAuthenticationFilter();
+        ShiroExtFormAuthenticationFilter authenticationFilter = shiroExtConfig().getShiroServerFormAuthenticationFilter();
         return authenticationFilter;
     }
 
@@ -92,12 +92,12 @@ public abstract class ShiroExtConfiguration {
         filterMap.put("authc", getCustomFormAuthenticationFilter());
 
         filterFactoryBean.setSecurityManager(getDefaultWebSecurityManager());
-        filterFactoryBean.setLoginUrl(extShiroConfig().getLoginUrl());
-        filterFactoryBean.setSuccessUrl(extShiroConfig().getSuccessUrl());
-        filterFactoryBean.setUnauthorizedUrl(extShiroConfig().getUnauthorizedUrl());
+        filterFactoryBean.setLoginUrl(shiroExtConfig().getLoginUrl());
+        filterFactoryBean.setSuccessUrl(shiroExtConfig().getSuccessUrl());
+        filterFactoryBean.setUnauthorizedUrl(shiroExtConfig().getUnauthorizedUrl());
         filterFactoryBean.setFilters(filterMap);
 
-        filterFactoryBean.setFilterChainDefinitionMap(extShiroConfig().getFilterChainDefinitionMap());
+        filterFactoryBean.setFilterChainDefinitionMap(shiroExtConfig().getFilterChainDefinitionMap());
         return filterFactoryBean;
     }
 }
