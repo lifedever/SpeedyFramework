@@ -1,5 +1,7 @@
 package io.github.gefangshuai.demo.controller;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.mgt.SecurityManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,6 +28,7 @@ public class IndexController {
 
     @RequestMapping("/logout")
     public String logout(){
+        SecurityUtils.getSubject().logout();
         return "redirect:/login";
     }
 }

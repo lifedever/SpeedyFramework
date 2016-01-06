@@ -3,6 +3,7 @@ package io.github.gefangshuai.demo.config;
 import io.github.gefangshuai.ext.shiro.ShiroExtConfiguration;
 import io.github.gefangshuai.ext.shiro.ShiroExtRealm;
 import io.github.gefangshuai.ext.shiro.bean.ShiroExtConfig;
+import io.github.gefangshuai.ext.shiro.bean.ShiroUser;
 import io.github.gefangshuai.ext.shiro.bean.UserModel;
 import io.github.gefangshuai.ext.shiro.filter.ShiroExtFormAuthenticationFilter;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -53,7 +54,7 @@ public class ShiroConfiguration extends ShiroExtConfiguration {
             public ShiroExtFormAuthenticationFilter getShiroServerFormAuthenticationFilter() {
                 return new ShiroExtFormAuthenticationFilter() {
                     @Override
-                    protected void doSomethingOnLoginSuccess(ApplicationContext context, AuthenticationToken token, Subject subject, ServletRequest request, ServletResponse response) {
+                    protected void doSomethingOnLoginSuccess(ApplicationContext context, AuthenticationToken token, ShiroUser shiroUser, Subject subject, ServletRequest request, ServletResponse response) {
                         System.out.println("login success!");
                     }
                 };
@@ -77,6 +78,7 @@ public class ShiroConfiguration extends ShiroExtConfiguration {
             @Override
             public Map<String, String> getFilterChainDefinitionMap() {
                 Map<String, String> filterMap = new HashMap<>();
+                filterMap.put("/favicon.ico", "anon");
                 filterMap.put("/js/**", "anon");
                 filterMap.put("/css/**", "anon");
                 filterMap.put("/imgs/**", "anon");
