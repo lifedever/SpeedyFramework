@@ -9,7 +9,7 @@ speedy-base详细介绍
 ```xml
 <dependency>
   <groupId>io.github.gefangshuai</groupId>
-  <artifactId>speedy-ext</artifactId>
+  <artifactId>speedy-base</artifactId>
   <version>${speedy-version}</version>
 </dependency>
 ```
