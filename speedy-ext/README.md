@@ -41,3 +41,64 @@ public class User extends CoreModel{
     }
 }
 ```
+
+### CoreDao
+CoreDao是`JpaRepository`和`JpaSpecificationExecutor`的合集，具体功能可参见[JPA Repositories](http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.repositories)
+
+使用CoreDao，只需要自己的Dao继承CoreDao即可：
+```java
+public interface UserDao extends CoreDao<User, Long>{
+    User findByUsername(String username);
+}
+```
+
+### CoreService
+CoreService结合CoreDao，扩展了几个常用的CURD方法，详见源码[CoreService](https://github.com/gefangshuai/SpeedyFramework/blob/master/speedy-ext/src/main/java/io/github/gefangshuai/ext/persistence/CoreService.java)
+
+使用CoreService，需要将自己的Service继承CoreService，同时将自己的Dao进行注入：
+```java
+@Service
+public class UserService extends CoreService<User, Long>{
+    private UserDao userDao;
+    @Resource
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+        super.coreDao = userDao;
+    }
+
+    public User findByUsername(String username) {
+        return userDao.findByUsername(username);
+    }
+}
+```
+> 注意`@Resource`注解或`@Autowire`注解要加在dao的Set方法上，否则CoreService中定义的方法将无法使用!
+
+## Shiro集成及扩展
+`speedy-ext`集成了对Shiro的扩展，`为什么是shiro而不是Spring Security呢？` 因为Shiro轻量、灵活、扩展性高。
+
+主要功能有：
+- Shiro基础框架集成。
+- Shiro的`AuthorizingRealm`和`FormAuthenticationFilter`功能进行抽象，完成了大部分的配置。
+- 增加UserModel超类，提供对登录名、密码、盐值的生成及保存。
+- 增加ShiroUser类，用于保存登录用户的信息。
+- 修复官方Shiro注解不支持对类注解的bug(这个Bug这么长时间了，官方竟然不修复……)。
+- 定义了一套Shiro的Freemarker类库。
+ 
+下面着重说一下使用方法：
+
+关于Shiro所有的配置，`speedy-ext`已基本完成，使用的时候，只需要关注`ShiroExtConfig`接口即可。
+
+首先在项目中加入一个`Configuration`类，并继承`ShiroExtConfiguration`。为了能够在此类中使用`ApplicationContext`，我们还需要实现`ApplicationContextAware`接口。
+
+然后完成`ShiroExtConfig`中的各个方法即可，具体参见[ShiroConfiguration](https://github.com/gefangshuai/SpeedyFramework/blob/master/speedy-sample/src/main/java/io/github/gefangshuai/demo/config/ShiroConfiguration.java)
+
+说明：
+
+`getShiroExtRealm()`方法主要是返回一个自定义的`ShiroExtRealm`类，实现`ShiroExtRealm`中的三个抽象方法
+- getUserByUsername(String username)：根据用户名查询用户
+- getRolesByUsername(String username)：根据用户名查询当前用户的角色列表
+- getPermissionsByUsername(String username)：根据用户名查询当前用户的权限列表
+
+`getShiroServerFormAuthenticationFilter()`方法主要是返回一个自定义的`ShiroExtFormAuthenticationFilter`，实现抽象方法`doSomethingOnLoginSuccess()`，顾名思义：登陆成功后，做的一些处理。
+
+`getFilterChainDefinitionMap()`方法定义了Shiro的Url权限过滤链。
