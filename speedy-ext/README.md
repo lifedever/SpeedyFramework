@@ -129,3 +129,9 @@ public class User extends UserModel{
 在处理注册用户的数据保存时，可以通过UserModel自动产生加密的密码及盐值，通过调用`user.encryptUser()`方法。详细参见[AccountController.saveUser](https://github.com/gefangshuai/SpeedyFramework/blob/master/speedy-sample/src/main/java/io/github/gefangshuai/demo/controller/AccountController.java#L31)
 
 ### Shiro的Freemarker类库shiro.ftl使用
+
+Shiro官方并没有对Freemaker提供支持，这里做了一个简单的支持，可以在项目中直接引用`shiro.ftl`，需要注意的是需要在项目的`application.preperties`配置文件中设置：
+```bash
+spring.freemarker.prefer-file-system-access=false
+```
+更多可参考：[Spring Boot 将Freemarker打包到其他jar并在项目中引用的简单方法](http://www.jianshu.com/p/ba2365bc7324)
