@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form method="post" action="/account/save-user">
+            <form method="post" action="/u/save-user">
                 <div class="form-group">
                     <label for="username">用户名</label>
                     <input type="text" class="form-control" id="username" name="username">

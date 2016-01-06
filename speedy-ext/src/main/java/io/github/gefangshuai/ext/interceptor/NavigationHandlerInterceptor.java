@@ -30,7 +30,7 @@ public class NavigationHandlerInterceptor extends HandlerInterceptorAdapter {
             menu = menuAnno.value();
         }
         request.setAttribute(NAV_MENU_ATTR, menu);
-        logger.debug("---servlet menu: " + menu);
+        logger.debug("servlet menu: " + menu);
         super.postHandle(request, response, handler, modelAndView);
     }
 }

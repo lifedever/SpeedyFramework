@@ -16,13 +16,13 @@ import javax.annotation.Resource;
  * Created by gefangshuai on 2016/1/6.
  */
 @Controller
-@RequestMapping("/account")
+@RequestMapping("/u")
 public class AccountController {
     @Resource
     private UserService userService;
 
 
-    @RequestMapping("/register")
+    @RequestMapping("/create")
     public String register(){
         return "register";
     }

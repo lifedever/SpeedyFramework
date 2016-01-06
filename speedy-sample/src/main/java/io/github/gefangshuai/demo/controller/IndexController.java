@@ -1,5 +1,6 @@
 package io.github.gefangshuai.demo.controller;
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,11 +13,14 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(){
-        return "index";
+        return "redirect:/p";
     }
 
     @RequestMapping("/login")
     public String login(){
+        if (SecurityUtils.getSubject().isAuthenticated()) {
+            return "redirect:/";
+        }
         return "login";
     }
 

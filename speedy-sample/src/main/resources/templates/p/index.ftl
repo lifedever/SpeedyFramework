@@ -1,4 +1,4 @@
-<#import "tags.ftl" as tags>
+<#import "../tags.ftl" as tags>
 <!DOCTYPE html>
 <html>
 <head>
