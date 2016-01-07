@@ -8,10 +8,10 @@ speedy-ext详细介绍
 - [JPA功能扩展](#user-content-jpa功能扩展)
 - [Shiro集成及扩展](#user-content-shiro集成及扩展)
 - [页面动态菜单控制支持](#user-content-页面动态菜单控制支持)
-- [FlashMessage支持](#user-content-FlashMessage支持)
-- [EHCache支持](#user-content-EHCache支持)
-- [基本WebMvcConfiguration配置](#user-content-基本WebMvcConfiguration配置)
-- [Jsonp支持](#Jsonp支持)
+- [FlashMessage支持](#user-content-flashmessage支持)
+- [EHCache支持](#user-content-ehcache支持)
+- [基本WebMvcConfiguration配置](#user-content-基本webmvcconfiguration配置)
+- [Jsonp支持](#user-content-jsonp支持)
 
 下面对每个功能进行详细说明。
 
