@@ -17,5 +17,4 @@ io\github\gefangshuai\ext\spring\WebMVCConfigurerAdapter.class
 io\github\gefangshuai\ext\persistence\CoreDao.class
 io\github\gefangshuai\ext\interceptor\NavigationHandlerInterceptor.class
 io\github\gefangshuai\ext\utils\HashUtils.class
-io\github\gefangshuai\ext\controller\ErrorPageController.class
 io\github\gefangshuai\ext\persistence\CoreModel.class
