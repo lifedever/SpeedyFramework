@@ -83,7 +83,7 @@ public class UserService extends CoreService<User, Long>{
 - 增加ShiroUser类，用于保存登录用户的信息。
 - 修复官方Shiro注解不支持对类注解的bug(这个Bug这么长时间了，官方竟然不修复……)。
 - 定义了一套Shiro的Freemarker类库。
- 
+
 ### 使用方法：
 
 关于Shiro所有的配置，`speedy-ext`已基本完成，使用的时候，只需要关注`ShiroExtConfig`接口即可。
@@ -135,3 +135,6 @@ Shiro官方并没有对Freemaker提供支持，这里做了一个简单的支持
 spring.freemarker.prefer-file-system-access=false
 ```
 更多可参考：[Spring Boot 将Freemarker打包到其他jar并在项目中引用的简单方法](http://www.jianshu.com/p/ba2365bc7324)
+
+## 页面动态菜单控制支持
+这个功能可以算是一个小的扩展，
