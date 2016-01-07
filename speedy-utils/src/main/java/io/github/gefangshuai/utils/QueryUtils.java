@@ -3,6 +3,7 @@ package io.github.gefangshuai.utils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * 拼接Like查询字符串
  * Created by gefangshuai on 2015/11/30.
  */
 public class QueryUtils {
