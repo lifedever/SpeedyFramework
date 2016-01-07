@@ -12,18 +12,18 @@ public class CoreModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date createTime;
-    private Date updateTime;
+    private Date createdTime;
+    private Date updatedTime;
 
 
     @PrePersist
     protected void onCreate() {
-        createTime = new Date();
+        createdTime = new Date();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        updateTime = new Date();
+        updatedTime = new Date();
     }
 
     public Long getId() {
@@ -34,20 +34,20 @@ public class CoreModel implements Serializable {
         this.id = id;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getCreatedTime() {
+        return createdTime;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Date getUpdatedTime() {
+        return updatedTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdatedTime(Date updatedTime) {
+        this.updatedTime = updatedTime;
     }
 
     @Transient
