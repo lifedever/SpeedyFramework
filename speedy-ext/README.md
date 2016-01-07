@@ -198,6 +198,9 @@ FlashMessage([FlashMessageUtils](https://github.com/gefangshuai/SpeedyFramework/
 ## 基本WebMvcConfiguration配置
 请参见源码[WebMVCConfigurerAdapter](https://github.com/gefangshuai/SpeedyFramework/blob/master/speedy-ext/src/main/java/io/github/gefangshuai/ext/spring/WebMVCConfigurerAdapter.java)
 
+- 开启国际化支持
+- 开启多文件上传支持
+
 ## Jsonp支持
 
 `speedy-ext`已开启对Jsonp的支持，自己不需要再额外配置。
