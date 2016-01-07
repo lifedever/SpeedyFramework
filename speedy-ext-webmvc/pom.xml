@@ -7,15 +7,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.gefangshuai</groupId>
-    <artifactId>speedy-ext</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>speedy-ext-webmvc</artifactId>
+    <packaging>jar</packaging>
 
-    <name>speedy-ext</name>
+    <name>speedy-ext-webmvc</name>
     <url>http://maven.apache.org</url>
 
     <properties>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -25,23 +23,5 @@
             <artifactId>speedy-base</artifactId>
             <version>0.0.1</version>
         </dependency>
-        <dependency>
-            <groupId>io.github.gefangshuai</groupId>
-            <artifactId>speedy-ext-persistence</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.gefangshuai</groupId>
-            <artifactId>speedy-ext-shiro</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.gefangshuai</groupId>
-            <artifactId>speedy-ext-webmvc</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-
     </dependencies>
 </project>

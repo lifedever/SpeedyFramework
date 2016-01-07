@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.7</java.version>
-
+        <ehcache.version>2.10.0</ehcache.version>
         <aspectjrt.version>1.8.7</aspectjrt.version>
         <cglib.version>2.2.2</cglib.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -94,6 +94,10 @@
             <artifactId>cglib</artifactId>
             <version>${cglib.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
+        </dependency>
     </dependencies>
 </project>

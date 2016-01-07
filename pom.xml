@@ -15,6 +15,9 @@
         <module>speedy-utils</module>
         <module>speedy-ext</module>
         <module>speedy-sample</module>
+        <module>speedy-ext-persistence</module>
+        <module>speedy-ext-shiro</module>
+        <module>speedy-ext-webmvc</module>
     </modules>
     <packaging>pom</packaging>
 

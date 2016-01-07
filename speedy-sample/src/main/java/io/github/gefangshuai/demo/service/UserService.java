@@ -11,7 +11,7 @@ import javax.annotation.Resource;
  * Created by gefangshuai on 2016/1/6.
  */
 @Service
-public class UserService extends CoreService<User, Long>{
+public class UserService extends CoreService<User, Long> {
 
     private UserDao userDao;
 

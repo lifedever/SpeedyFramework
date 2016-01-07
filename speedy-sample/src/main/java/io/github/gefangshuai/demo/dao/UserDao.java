@@ -6,6 +6,6 @@ import io.github.gefangshuai.ext.persistence.CoreDao;
 /**
  * Created by gefangshuai on 2016/1/6.
  */
-public interface UserDao extends CoreDao<User, Long>{
+public interface UserDao extends CoreDao<User, Long> {
     User findByUsername(String username);
 }
