@@ -13,7 +13,7 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(){
-        return "redirect:/p";
+        return "index";
     }
 
     @RequestMapping("/login")

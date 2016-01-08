@@ -1,4 +1,4 @@
-<#import "../tags.ftl" as tags>
+<#import "tags.ftl" as tags>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 <div class="container">
     <div class="jumbotron text-center">
         <h1><@tags.spring.message code="app.title"/></h1>
-        <p>文章列表页面</p>
+        <p>Hello World!</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
     </div>
 </div>
