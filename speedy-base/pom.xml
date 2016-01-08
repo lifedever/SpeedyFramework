@@ -3,7 +3,7 @@
     <parent>
         <artifactId>SpeedyFramework</artifactId>
         <groupId>io.github.gefangshuai</groupId>
-        <version>0.0.1</version>
+        <version>0.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>io.github.gefangshuai</groupId>
             <artifactId>speedy-utils</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </dependency>
 
         <!-- SpringFramework -->

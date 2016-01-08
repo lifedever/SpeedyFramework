@@ -96,8 +96,8 @@ public abstract class ShiroExtConfiguration {
         filterFactoryBean.setSuccessUrl(shiroExtConfig().getSuccessUrl());
         filterFactoryBean.setUnauthorizedUrl(shiroExtConfig().getUnauthorizedUrl());
         filterFactoryBean.setFilters(filterMap);
-
         filterFactoryBean.setFilterChainDefinitionMap(shiroExtConfig().getFilterChainDefinitionMap());
+
         return filterFactoryBean;
     }
 }
