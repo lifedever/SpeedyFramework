@@ -26,6 +26,7 @@ Speedy Framework
 <dependency>
     <groupId>io.github.gefangshuai</groupId>
     <artifactId>speedy-base</artifactId>
+    <type>pom</type>
     <version>${speedy-version}</version>
 </dependency>
 ```
@@ -40,6 +41,7 @@ Speedy Framework
 <dependency>
     <groupId>io.github.gefangshuai</groupId>
     <artifactId>speedy-ext</artifactId>
+    <type>pom</type>
     <version>${speedy-version}</version>
 </dependency>
 ```
