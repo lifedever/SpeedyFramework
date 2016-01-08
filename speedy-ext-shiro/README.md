@@ -63,3 +63,5 @@ Shiro官方并没有对Freemaker提供支持，这里做了一个简单的支持
 spring.freemarker.prefer-file-system-access=false
 ```
 更多可参考：[Spring Boot 将Freemarker打包到其他jar并在项目中引用的简单方法](http://www.jianshu.com/p/ba2365bc7324)
+
+> 注意：由于spring在4.2.x之后对静态资源的加载做了微调，请使用spring-boot 1.3.x版本。如果是spring-boot 1.2.7版本，则无法直接使用`shiro.ftl`，请讲`shiro.ftl`文件直接拷贝到自己的web项目的`/resources/templates`根目录下。
