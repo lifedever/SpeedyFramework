@@ -12,6 +12,22 @@ Speedy Framework
 
 每个模块详细功能请到具体模块目录下查看。
 
+# 准备工作
+
+首先将框架clone到本地
+
+```bash
+git clone git@github.com:gefangshuai/SpeedyFramework.git
+```
+
+然后将框架安装到本地仓库
+
+```bash
+mvn clean compile install
+```
+
+over!
+
 # 快速入门
 
 `SpeedyFramework`默认提供两种模式方便进行快速框架搭建：**基础模式**和**偷懒模式**
