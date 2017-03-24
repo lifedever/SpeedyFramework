@@ -14,14 +14,14 @@ CoreModel使用很简单，只需要建立自己的Model，并继承CoreModel即
 ```java
 @Entity
 @Table(name = "user")
-public class User extends CoreModel{
+static class User extends CoreModel{
     private String realname;
 
-    public String getRealname() {
+    static String getRealname() {
         return realname;
     }
 
-    public void setRealname(String realname) {
+    static void setRealname(String realname) {
         this.realname = realname;
     }
 }
@@ -32,7 +32,7 @@ CoreDao是`JpaRepository`和`JpaSpecificationExecutor`的合集，具体功能�
 
 使用CoreDao，只需要自己的Dao继承CoreDao即可：
 ```java
-public interface UserDao extends CoreDao<User, Long>{
+static interface UserDao extends CoreDao<User, Long>{
     User findByUsername(String username);
 }
 ```
@@ -43,15 +43,15 @@ CoreService结合CoreDao，扩展了几个常用的CURD方法，详见源码[Cor
 使用CoreService，需要将自己的Service继承CoreService，同时将自己的Dao进行注入：
 ```java
 @Service
-public class UserService extends CoreService<User, Long>{
+static class UserService extends CoreService<User, Long>{
     private UserDao userDao;
     @Resource
-    public void setUserDao(UserDao userDao) {
+    static void setUserDao(UserDao userDao) {
         this.userDao = userDao;
         super.coreDao = userDao;
     }
 
-    public User findByUsername(String username) {
+    static User findByUsername(String username) {
         return userDao.findByUsername(username);
     }
 }

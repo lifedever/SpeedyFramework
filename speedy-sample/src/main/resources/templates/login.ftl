@@ -26,7 +26,6 @@
                 </div>
                 <button type="submit" class="btn btn-default">登录</button>
             </form>
-
         </div>
         <div class="col-md-4"></div>
     </div>

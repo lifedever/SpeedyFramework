@@ -41,14 +41,14 @@ UserModel中包含三个字段`username`、`password`、`salt`，分别代表“
 ```java
 @Entity
 @Table(name = "user")
-public class User extends UserModel{
+static class User extends UserModel{
     private String realname;
 
-    public String getRealname() {
+    static String getRealname() {
         return realname;
     }
 
-    public void setRealname(String realname) {
+    static void setRealname(String realname) {
         this.realname = realname;
     }
 }

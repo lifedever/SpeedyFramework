@@ -13,10 +13,10 @@ speedy-sample详细介绍
 
 # 截图
 用户登录
-![](src/main/resources/public/imgs/1.png)
+![](src/main/resources/static/imgs/1.png)
 
 用户注册
-![](src/main/resources/public/imgs/2.png)
+![](src/main/resources/static/imgs/2.png)
 
 登陆成功
-![](src/main/resources/public/imgs/3.png)
+![](src/main/resources/static/imgs/3.png)

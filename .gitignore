@@ -2,3 +2,4 @@
 *.iml
 logs
 **/public/libs
+*/target

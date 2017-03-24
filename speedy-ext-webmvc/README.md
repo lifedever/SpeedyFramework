@@ -17,14 +17,14 @@ speedy-ext-webmvc详细介绍
 @Menu("admin-restaurants")
 @Controller
 @RequestMapping("/admin/restaurants")
-public class AdminRestaurantController {
+static class AdminRestaurantController {
     @Menu("admin-restaurants-index")
     @RequestMapping
-    public String index(Model model){
+    static String index(Model model){
         //……
     }
     @RequestMapping("/edit")
-    public String edit(Model model){
+    static String edit(Model model){
       //……
     }
 }
@@ -41,7 +41,7 @@ public class AdminRestaurantController {
 @Menu("admin-restaurants")
 @Controller
 @RequestMapping("/admin/restaurants")
-public class AdminRestaurantController {
+static class AdminRestaurantController {
     // ……
 }
 ```

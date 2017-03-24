@@ -19,6 +19,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -82,12 +83,9 @@ public class ShiroConfiguration extends ShiroExtConfiguration implements Applica
 
             @Override
             public Map<String, String> getFilterChainDefinitionMap() {
-                Map<String, String> filterMap = new HashMap<>();
+                Map<String, String> filterMap = new LinkedHashMap<>();
                 filterMap.put("/favicon.ico", "anon");
-                filterMap.put("/js/**", "anon");
-                filterMap.put("/css/**", "anon");
-                filterMap.put("/imgs/**", "anon");
-                filterMap.put("/libs/**", "anon");
+                filterMap.put("/static/**", "anon");
                 filterMap.put("/u/**", "anon");
                 filterMap.put("/p/**", "authc");
                 filterMap.put("/login", "authc");

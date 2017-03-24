@@ -1,8 +1,8 @@
 <#import "tags.ftl" as tags>
 <#macro head>
-<link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
-<script src="/libs/jquery/dist/jquery.min.js"></script>
-<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title><@tags.spring.message code="app.title" /></title>
 </#macro>
 
