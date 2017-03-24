@@ -1,7 +1,8 @@
 package io.github.gefangshuai.ext.interceptor;
 
 import io.github.gefangshuai.ext.annotation.Menu;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -15,7 +16,7 @@ import java.lang.reflect.Method;
  * Created by gefangshuai on 2015/11/3.
  */
 public class NavigationHandlerInterceptor extends HandlerInterceptorAdapter {
-    Logger logger = Logger.getLogger(NavigationHandlerInterceptor.class);
+    Logger logger = LoggerFactory.getLogger(NavigationHandlerInterceptor.class);
     private static final String NAV_MENU_ATTR = "nav_menu";
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {

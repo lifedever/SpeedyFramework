@@ -1,20 +1,18 @@
 package io.github.gefangshuai.ext.spring;
 
 import io.github.gefangshuai.ext.interceptor.NavigationHandlerInterceptor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-import org.springframework.boot.context.embedded.ErrorPage;
+import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
-import javax.servlet.ServletContext;
 import java.util.Locale;
 
 /**
@@ -22,7 +20,7 @@ import java.util.Locale;
  * Created by gefangshuai on 2015/11/3.
  */
 @Configuration
-public class WebMVCConfigurerAdapter extends WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter {
+public class WebMVCConfigurerAdapter extends WebMvcConfigurerAdapter {
     /**
      * 国际化配置
      */
