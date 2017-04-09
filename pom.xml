@@ -18,6 +18,7 @@
         <module>speedy-ext-persistence</module>
         <module>speedy-ext-shiro</module>
         <module>speedy-ext-webmvc</module>
+        <module>speedy-protal</module>
     </modules>
     <packaging>pom</packaging>
 
