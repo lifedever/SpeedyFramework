@@ -1,0 +1,39 @@
+{
+  "name": "jquery.counterup",
+  "homepage": "https://github.com/ciromattia/jquery.counterup",
+  "description": "A lightweight jQuery plugin that counts up to a targeted number when the number becomes visible.",
+  "main": "jquery.counterup.js",
+  "moduleType": [],
+  "keywords": [
+    "jquery",
+    "plugin",
+    "counter",
+    "count",
+    "up",
+    "number",
+    "figure",
+    "numeric",
+    "int",
+    "float",
+    "animation"
+  ],
+  "dependencies": {
+    "jquery": ">=1.5",
+    "waypoints": ">=4.0"
+  },
+  "bugs": "https://github.com/ciromattia/jquery.counterup/issues",
+  "demo": "http://ciromattia.github.io/jquery.counterup/demo/index.html",
+  "authors": [
+    "Benjamin Intal",
+    "Jeremy Paris",
+    "Ciro Mattia Gonano"
+  ],
+  "license": "GPL-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
