@@ -1,0 +1,8 @@
+stages:
+  - build
+  - test
+
+job1:
+  stage: build
+  script:
+    - mvn clean compile install
