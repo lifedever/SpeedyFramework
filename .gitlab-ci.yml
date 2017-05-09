@@ -4,5 +4,7 @@ stages:
 
 job1:
   stage: build
+  only:
+      - master
   script:
     - mvn clean compile install
