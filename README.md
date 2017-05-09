@@ -10,7 +10,7 @@ Speedy Framework
 - speedy-utils：工具类库及自定义工具类的合集`speedy-base`默认依赖此模块
 - speedy-sample：一个注册登录示例
 
-每个模块详细功能请到具体模块目录下查看。
+每个模块详细功能请到具体模块目录下查看
 
 # 准备工作
 
