@@ -1,8 +1,14 @@
 image: maven:3-jdk-8
-
+stages:
+  - build
+  - build_image
+  
 build:
   script: "mvn clean compile package"
 
 build_image:
   script:
-    - docker build -t my-docker-image .
+    - rm -rf /root/springboot-docker/working
+    - mkdir -p /root/springboot-docker/working
+    - cp -r speedy-protal/target/speedy-protal-0.0.2/* /root/springboot-docker/working/
+    - docker build -t my/springboot .
