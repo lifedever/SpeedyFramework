@@ -3,6 +3,10 @@ stages:
   - build
   - build_image
 
+before_script:
+  - who
+  - pwd
+
 build:
   stage: build
   script: 
