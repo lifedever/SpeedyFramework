@@ -1,10 +1,5 @@
-stages:
-  - build
-  - test
+image: maven:3-jdk-8
 
-job1:
-  stage: build
-  only:
-      - master
-  script:
-      - echo 'hello build!'
+test:
+  stage: test
+  script: "mvn test"
