@@ -12,6 +12,6 @@ build:
     - mvn clean compile package
     - rm -rf /usr/share/docker/working
     - mkdir /usr/share/docker/working
-    - cp -R speedy-protal/target/speedy-protal-0.0.2/* /usr/share/docker/working/*
+    - cp -R speedy-protal/target/speedy-protal-0.0.2/* /usr/share/docker/working/
     - cd /usr/share/docker
     - docker build -t my/springboot .
