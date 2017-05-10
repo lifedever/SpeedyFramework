@@ -11,8 +11,6 @@ build:
 build_image:
   stage: build_image
   script:
-    - rm -rf /root/springboot-docker/working
-    - mkdir -p /root/springboot-docker/working
-    - cp -r speedy-protal/target/speedy-protal-0.0.2/* /root/springboot-docker/working/
+    - cp -R speedy-protal/target/speedy-protal-0.0.2/* /root/springboot-docker/working/
     - cd /root/springboot-docker
     - docker build -t my/springboot .
