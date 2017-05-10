@@ -1,12 +1,15 @@
-image: maven:3-jdk-8
+
 stages:
   - build
   - build_image
 
 build:
-  script: "mvn clean compile package"
+  stage: build
+  script: 
+    - mvn clean compile package
 
 build_image:
+  stage: build_image
   script:
     - rm -rf /root/springboot-docker/working
     - mkdir -p /root/springboot-docker/working
