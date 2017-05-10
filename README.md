@@ -14,7 +14,7 @@ Speedy Framework
 
 # 准备工作
 
-首先将框架clone到本地
+首先将框架clone到本地.
 
 ```bash
 git clone git@github.com:gefangshuai/SpeedyFramework.git
