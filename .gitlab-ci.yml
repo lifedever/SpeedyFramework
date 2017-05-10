@@ -15,6 +15,6 @@ build:
 build_image:
   stage: build_image
   script:
-    - cp -R speedy-protal/target/speedy-protal-0.0.2/* /root/springboot-docker/working/
-    - cd /root/springboot-docker
+    - cp -R speedy-protal/target/speedy-protal-0.0.2/* /usr/share/docker/working/
+    - cd /usr/share/docker
     - docker build -t my/springboot .
