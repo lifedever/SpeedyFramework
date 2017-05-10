@@ -10,7 +10,9 @@ before_script:
 build:
   stage: build
   script: 
-    - mvn clean compile package
+    - mvn clean compile install
+    - cd speedy-protal
+    - mvn package
 
 build_image:
   stage: build_image
