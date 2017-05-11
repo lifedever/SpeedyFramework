@@ -89,7 +89,8 @@ public class ShiroConfiguration extends ShiroExtConfiguration implements Applica
                 filterMap.put("/u/**", "anon");
                 filterMap.put("/p/**", "authc");
                 filterMap.put("/login", "authc");
-                filterMap.put("/**", "authc");
+                filterMap.put("/**", "anon");
+//                filterMap.put("/**", "authc");
                 return filterMap;
             }
         };
