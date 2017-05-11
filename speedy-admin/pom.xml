@@ -33,6 +33,12 @@
             <version>1.5.0</version>
         </dependency>
         <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>io.github.gefangshuai</groupId>
             <artifactId>speedy-base</artifactId>
             <version>0.0.2</version>
