@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender" >
+        <encoder>
+            <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>TRACE</level>
+        </filter>
+    </appender>
+
+    <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>logs/apppay.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <FileNamePattern>apppay.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>${FILE_LOG_PATTERN}</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- 测试环境+开发环境. 多个使用逗号隔开. -->
+    <springProfile name="dev">
+        <root>
+            <appender-ref ref="dailyRollingFileAppender"/>
+        </root>
+        <logger name="org.springframework.web" level="INFO"/>
+        <logger name="com.kanasinfo" level="DEBUG"/>
+    </springProfile>
+
+
+    <!-- 生产环境. -->
+    <springProfile name="test,prod">
+        <root>
+            <appender-ref ref="dailyRollingFileAppender"/>
+        </root>
+        <logger name="org.springframework.web" level="ERROR"/>
+        <logger name="com.kanasinfo" level="INFO"/>
+    </springProfile>
+
+
+</configuration>
