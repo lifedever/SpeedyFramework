@@ -1,6 +1,6 @@
-package io.github.gefangshuai.ext.interceptor;
+package io.github.gefangshuai.ext.mvc.interceptor;
 
-import io.github.gefangshuai.ext.annotation.Menu;
+import io.github.gefangshuai.ext.mvc.annotation.Menu;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.method.HandlerMethod;

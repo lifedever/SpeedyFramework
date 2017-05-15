@@ -1,4 +1,4 @@
-package io.github.gefangshuai.ext.annotation;
+package io.github.gefangshuai.ext.mvc.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,6 +1,6 @@
-package io.github.gefangshuai.ext.spring;
+package io.github.gefangshuai.ext.mvc.spring;
 
-import io.github.gefangshuai.ext.interceptor.NavigationHandlerInterceptor;
+import io.github.gefangshuai.ext.mvc.interceptor.NavigationHandlerInterceptor;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ErrorPage;

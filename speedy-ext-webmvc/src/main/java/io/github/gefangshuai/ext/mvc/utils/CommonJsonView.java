@@ -1,4 +1,4 @@
-package io.github.gefangshuai.ext.utils;
+package io.github.gefangshuai.ext.mvc.utils;
 
 /**
  * Created by gefangshuai on 2015/12/16.

@@ -2,7 +2,7 @@ package io.github.gefangshuai.demo.controller;
 
 import io.github.gefangshuai.demo.model.User;
 import io.github.gefangshuai.demo.service.UserService;
-import io.github.gefangshuai.ext.utils.FlashMessageUtils;
+import io.github.gefangshuai.ext.mvc.utils.FlashMessageUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Controller;

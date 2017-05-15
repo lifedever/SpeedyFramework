@@ -19,7 +19,7 @@
         <module>speedy-ext-shiro</module>
         <module>speedy-ext-webmvc</module>
         <module>speedy-protal</module>
-        <module>speedy-admin</module>
+        <module>speedy-admin-actuator</module>
     </modules>
     <packaging>pom</packaging>
 

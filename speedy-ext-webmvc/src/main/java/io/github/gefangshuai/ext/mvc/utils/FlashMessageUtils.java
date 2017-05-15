@@ -1,4 +1,4 @@
-package io.github.gefangshuai.ext.utils;
+package io.github.gefangshuai.ext.mvc.utils;
 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 

@@ -1,4 +1,4 @@
-package io.github.gefangshuai.ext.spring;
+package io.github.gefangshuai.ext.mvc.spring;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.AbstractJsonpResponseBodyAdvice;
