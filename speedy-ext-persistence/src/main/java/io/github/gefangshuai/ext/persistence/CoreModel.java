@@ -3,6 +3,7 @@ package io.github.gefangshuai.ext.persistence;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * Created by gefangshuai on 2015/11/13.
@@ -10,11 +11,17 @@ import java.util.Date;
 @MappedSuperclass
 public class CoreModel implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name = "id")
+    private String id;
+
+    @Column(name = "created_time")
     private Date createdTime;
+    @Column(name = "updated_time")
     private Date updatedTime;
 
+    public CoreModel() {
+        this.id = UUID.randomUUID().toString().replace("-", "");
+    }
 
     @PrePersist
     protected void onCreate() {
@@ -26,11 +33,11 @@ public class CoreModel implements Serializable {
         updatedTime = new Date();
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -52,11 +59,11 @@ public class CoreModel implements Serializable {
 
     @Transient
     public boolean isNew() {
-        return id == null || id == 0;
+        return id == null;
     }
 
     @Transient
     public boolean isNotNew() {
-        return id != null && id > 0;
+        return !isNew();
     }
 }
