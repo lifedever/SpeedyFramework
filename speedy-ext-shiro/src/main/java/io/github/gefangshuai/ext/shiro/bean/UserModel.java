@@ -1,6 +1,6 @@
 package io.github.gefangshuai.ext.shiro.bean;
 
-import io.github.gefangshuai.ext.persistence.CoreModel;
+import io.github.gefangshuai.ext.persistence.SupportModel;
 import io.github.gefangshuai.ext.shiro.utils.HashUtils;
 
 import javax.persistence.MappedSuperclass;
@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * 用于Shiro登录校验的用户封装，自定义User Model可以继承此类
  */
 @MappedSuperclass
-public class UserModel extends CoreModel{
+public class UserModel extends SupportModel {
 
     @NotNull
     private String username;        // 登录名

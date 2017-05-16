@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.github.gefangshuai</groupId>
     <artifactId>SpeedyFramework</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <modules>
         <module>speedy-base</module>
         <module>speedy-utils</module>

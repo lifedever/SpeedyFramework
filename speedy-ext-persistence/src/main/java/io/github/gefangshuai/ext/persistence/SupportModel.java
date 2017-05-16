@@ -9,7 +9,7 @@ import java.util.UUID;
  * Created by gefangshuai on 2015/11/13.
  */
 @MappedSuperclass
-public class CoreModel implements Serializable {
+public class SupportModel implements Serializable {
     @Id
     @Column(name = "id")
     private String id;
@@ -19,7 +19,7 @@ public class CoreModel implements Serializable {
     @Column(name = "updated_time")
     private Date updatedTime;
 
-    public CoreModel() {
+    public SupportModel() {
         this.id = UUID.randomUUID().toString().replace("-", "");
     }
 

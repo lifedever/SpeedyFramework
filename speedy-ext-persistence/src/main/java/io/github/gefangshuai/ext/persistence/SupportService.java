@@ -13,37 +13,37 @@ import java.util.List;
  * Created by gefangshuai on 2015/11/16.
  */
 @Transactional(readOnly = true)
-public abstract class CoreService<T, ID extends Serializable> {
-    protected CoreDao<T, ID> coreDao;
+public abstract class SupportService<T, ID extends Serializable> {
+    protected SupportRepository<T, ID> supportRepository;
 
     public T findOne(ID id) {
-        return coreDao.findOne(id);
+        return supportRepository.findOne(id);
     }
 
     @Transactional
     public T save(T t) {
-        return coreDao.save(t);
+        return supportRepository.save(t);
     }
 
     public List<T> findAll() {
-        return coreDao.findAll();
+        return supportRepository.findAll();
     }
 
     public List<T> findAll(Sort sort) {
-        return coreDao.findAll(sort);
+        return supportRepository.findAll(sort);
     }
 
     public Page<T> findAll(Pageable pageable){
-        return coreDao.findAll(pageable);
+        return supportRepository.findAll(pageable);
     }
 
     @Transactional
     public void delete(ID id) {
-        coreDao.delete(id);
+        supportRepository.delete(id);
     }
 
     public long count(){
-        return coreDao.count();
+        return supportRepository.count();
     }
 
 }

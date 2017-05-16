@@ -11,6 +11,6 @@ import java.io.Serializable;
  * Created by gefangshuai on 2015/11/6.
  */
 @NoRepositoryBean
-public interface CoreDao<T, ID extends Serializable> extends JpaRepository<T, ID>, JpaSpecificationExecutor<T> {
+public interface SupportRepository<T, ID extends Serializable> extends JpaRepository<T, ID>, JpaSpecificationExecutor<T> {
 
 }
