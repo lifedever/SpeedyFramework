@@ -1,5 +1,6 @@
 package io.github.gefangshuai.utils;
 
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 

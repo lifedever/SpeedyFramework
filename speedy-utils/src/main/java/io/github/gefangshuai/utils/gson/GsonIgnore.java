@@ -1,4 +1,4 @@
-package io.github.gefangshuai.utils.gson.ext;
+package io.github.gefangshuai.utils.gson;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

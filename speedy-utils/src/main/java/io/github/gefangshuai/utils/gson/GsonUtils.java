@@ -1,8 +1,5 @@
-package io.github.gefangshuai.utils;
+package io.github.gefangshuai.utils.gson;
 
-import com.fbi.sdk.utils.gson.DateDeserializer;
-import com.fbi.sdk.utils.gson.DateSerializer;
-import com.fbi.sdk.utils.gson.ext.IgnoreStrategy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.TypeAdapterFactory;
