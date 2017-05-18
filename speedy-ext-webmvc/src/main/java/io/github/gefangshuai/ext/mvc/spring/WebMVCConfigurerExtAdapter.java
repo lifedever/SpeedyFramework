@@ -1,6 +1,8 @@
 package io.github.gefangshuai.ext.mvc.spring;
 
 import io.github.gefangshuai.ext.mvc.interceptor.NavigationHandlerInterceptor;
+import io.github.gefangshuai.utils.StringKit;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ErrorPage;
@@ -20,7 +22,13 @@ import java.util.Locale;
  * Created by gefangshuai on 2015/11/3.
  */
 @Configuration
-public class WebMVCConfigurerAdapter extends WebMvcConfigurerAdapter {
+public class WebMVCConfigurerExtAdapter extends WebMvcConfigurerAdapter {
+
+    private String excludeNavigationPathPatterns;
+
+    protected void setExcludeNavigationPathPatterns(String excludeNavigationPathPatterns) {
+        this.excludeNavigationPathPatterns = excludeNavigationPathPatterns;
+    }
 
     /**
      * 国际化配置
@@ -47,7 +55,12 @@ public class WebMVCConfigurerAdapter extends WebMvcConfigurerAdapter {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(localeChangeInterceptor()).addPathPatterns("/**");
-        registry.addInterceptor(new NavigationHandlerInterceptor()).addPathPatterns("/**");
+        NavigationHandlerInterceptor navigationHandlerInterceptor = new NavigationHandlerInterceptor();
+        if (StringKit.isBlank(excludeNavigationPathPatterns)) {
+            registry.addInterceptor(navigationHandlerInterceptor).addPathPatterns("/**");
+        }else {
+            registry.addInterceptor(navigationHandlerInterceptor).addPathPatterns("/**").excludePathPatterns(excludeNavigationPathPatterns);
+        }
     }
 
     /**

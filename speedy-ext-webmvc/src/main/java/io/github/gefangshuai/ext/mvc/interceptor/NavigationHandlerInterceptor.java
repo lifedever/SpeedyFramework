@@ -17,6 +17,8 @@ import java.lang.reflect.Method;
  */
 public class NavigationHandlerInterceptor extends HandlerInterceptorAdapter {
     Logger logger = LoggerFactory.getLogger(NavigationHandlerInterceptor.class);
+
+
     private static final String NAV_MENU_ATTR = "nav_menu";
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
@@ -34,4 +36,5 @@ public class NavigationHandlerInterceptor extends HandlerInterceptorAdapter {
         logger.debug("servlet menu: " + menu);
         super.postHandle(request, response, handler, modelAndView);
     }
+
 }

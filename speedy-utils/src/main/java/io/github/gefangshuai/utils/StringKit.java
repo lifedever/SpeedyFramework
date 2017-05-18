@@ -8,6 +8,7 @@ import java.io.UnsupportedEncodingException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public final class StringKit {
 
@@ -206,7 +207,21 @@ public final class StringKit {
         return splitToInt(value, ",");
     }
 
-
+    /**
+     * 获取一定长度的随机字符串
+     * @param length 指定字符串长度
+     * @return 一定长度的字符串
+     */
+    public static String generateRandomStrByLength(int length) {
+        String base = "abcdefghijklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < length; i++) {
+            int number = random.nextInt(base.length());
+            sb.append(base.charAt(number));
+        }
+        return sb.toString();
+    }
 
     /**
      * 分割字符串并转换为数值数组
