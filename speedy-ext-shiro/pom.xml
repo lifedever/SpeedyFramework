@@ -3,7 +3,7 @@
     <parent>
         <artifactId>SpeedyFramework</artifactId>
         <groupId>io.github.gefangshuai</groupId>
-        <version>0.0.3</version>
+        <version>0.0.4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,13 +22,13 @@
         <dependency>
             <groupId>io.github.gefangshuai</groupId>
             <artifactId>speedy-base</artifactId>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>io.github.gefangshuai</groupId>
             <artifactId>speedy-ext-persistence</artifactId>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
         </dependency>
 
         <!--shiro-->

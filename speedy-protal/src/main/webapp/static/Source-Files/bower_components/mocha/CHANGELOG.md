@@ -1088,7 +1088,7 @@ Closes #247
   * Added `-c, --colors`. Closes #69
   * Fixed hook timeouts
 
-0.0.3 / 2011-11-23
+0.0.4 / 2011-11-23
 ==================
 
   * Added `-C, --no-colors` to explicitly disable

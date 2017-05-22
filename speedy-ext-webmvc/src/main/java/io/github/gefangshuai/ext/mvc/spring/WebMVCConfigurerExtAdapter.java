@@ -24,12 +24,6 @@ import java.util.Locale;
 @Configuration
 public class WebMVCConfigurerExtAdapter extends WebMvcConfigurerAdapter {
 
-    private String excludeNavigationPathPatterns;
-
-    protected void setExcludeNavigationPathPatterns(String excludeNavigationPathPatterns) {
-        this.excludeNavigationPathPatterns = excludeNavigationPathPatterns;
-    }
-
     /**
      * 国际化配置
      */
@@ -56,11 +50,7 @@ public class WebMVCConfigurerExtAdapter extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(localeChangeInterceptor()).addPathPatterns("/**");
         NavigationHandlerInterceptor navigationHandlerInterceptor = new NavigationHandlerInterceptor();
-        if (StringKit.isBlank(excludeNavigationPathPatterns)) {
-            registry.addInterceptor(navigationHandlerInterceptor).addPathPatterns("/**");
-        }else {
-            registry.addInterceptor(navigationHandlerInterceptor).addPathPatterns("/**").excludePathPatterns(excludeNavigationPathPatterns);
-        }
+        registry.addInterceptor(navigationHandlerInterceptor).addPathPatterns("/**");
     }
 
     /**

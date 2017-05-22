@@ -1,5 +1,9 @@
 package io.github.gefangshuai.ext.persistence;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -9,28 +13,22 @@ import java.util.UUID;
  * Created by gefangshuai on 2015/11/13.
  */
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public class SupportModel implements Serializable {
     @Id
     @Column(name = "id")
     private String id;
 
-    @Column(name = "created_time")
-    private Date createdTime;
-    @Column(name = "updated_time")
-    private Date updatedTime;
+    @CreatedDate
+    @Column(name = "created_date")
+    private Date createdDate;
+
+    @LastModifiedDate
+    @Column(name = "last_modified_date")
+    private Date lastModifiedDate;
 
     public SupportModel() {
         this.id = UUID.randomUUID().toString().replace("-", "");
-    }
-
-    @PrePersist
-    protected void onCreate() {
-        createdTime = new Date();
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        updatedTime = new Date();
     }
 
     public String getId() {
@@ -41,20 +39,20 @@ public class SupportModel implements Serializable {
         this.id = id;
     }
 
-    public Date getCreatedTime() {
-        return createdTime;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreatedTime(Date createdTime) {
-        this.createdTime = createdTime;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
-    public Date getUpdatedTime() {
-        return updatedTime;
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
     }
 
-    public void setUpdatedTime(Date updatedTime) {
-        this.updatedTime = updatedTime;
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
     }
 
     @Transient
