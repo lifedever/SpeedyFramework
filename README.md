@@ -40,7 +40,7 @@ over!
 
 ```xml
 <dependency>
-    <groupId>io.github.gefangshuai</groupId>
+    <groupId>com.kanasinfo</groupId>
     <artifactId>speedy-base</artifactId>
     <type>pom</type>
     <version>${speedy-version}</version>
@@ -55,7 +55,7 @@ over!
 
 ```xml
 <dependency>
-    <groupId>io.github.gefangshuai</groupId>
+    <groupId>com.kanasinfo</groupId>
     <artifactId>speedy-ext</artifactId>
     <type>pom</type>
     <version>${speedy-version}</version>

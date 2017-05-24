@@ -7,9 +7,9 @@
         <version>1.5.2.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>io.github.gefangshuai</groupId>
+    <groupId>com.kanasinfo</groupId>
     <artifactId>SpeedyFramework</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <modules>
         <module>speedy-base</module>
         <module>speedy-utils</module>
@@ -20,23 +20,29 @@
         <module>speedy-ext-webmvc</module>
         <module>speedy-protal</module>
         <module>speedy-admin-actuator</module>
+        <module>speedy-ext-mail</module>
     </modules>
     <packaging>pom</packaging>
 
     <name>SpeedyFramework</name>
-    <url>http://maven.apache.org</url>
+    <url>http://kanasinfo.com</url>
 
     <properties>
+        <java.version>1.7</java.version>
+        <resource.delimiter>@</resource.delimiter> <!-- delimiter that doesn't clash with Spring ${} placeholders -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>apache</id>
             <name>Repository for apache2</name>
             <url>http://repo.maven.apache.org/maven2</url>
         </repository>
-    </repositories>
+    </repositories>-->
     <distributionManagement>
         <repository>
             <id>releases</id>
@@ -58,40 +64,4 @@
             <url>https://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-    <build>
-        <plugins>
-
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.4</version>
-                <configuration>
-                    <attach>true</attach>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

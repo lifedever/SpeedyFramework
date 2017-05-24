@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>SpeedyFramework</artifactId>
-        <groupId>io.github.gefangshuai</groupId>
-        <version>0.0.4</version>
+        <groupId>com.kanasinfo</groupId>
+        <version>0.0.5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.gefangshuai</groupId>
+    <groupId>com.kanasinfo</groupId>
     <artifactId>speedy-base</artifactId>
     <packaging>pom</packaging>
 
@@ -24,9 +24,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.github.gefangshuai</groupId>
+            <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-utils</artifactId>
-            <version>0.0.4</version>
+            <version>0.0.5</version>
         </dependency>
 
         <!-- SpringFramework -->

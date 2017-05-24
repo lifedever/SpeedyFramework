@@ -1080,7 +1080,7 @@ Closes #247
 
   * Fixed: make mocha.opts whitespace less picky [kkaefer]
 
-0.0.4 / 2011-11-24
+0.0.5 / 2011-11-24
 ==================
 
   * Added `--interfaces`
@@ -1088,7 +1088,7 @@ Closes #247
   * Added `-c, --colors`. Closes #69
   * Fixed hook timeouts
 
-0.0.4 / 2011-11-23
+0.0.5 / 2011-11-23
 ==================
 
   * Added `-C, --no-colors` to explicitly disable
