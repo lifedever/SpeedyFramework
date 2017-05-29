@@ -21,6 +21,7 @@
         <module>speedy-protal</module>
         <module>speedy-admin-actuator</module>
         <module>speedy-ext-mail</module>
+        <module>speedy-ext-websocket</module>
     </modules>
     <packaging>pom</packaging>
 
