@@ -3,7 +3,7 @@
     <parent>
         <artifactId>SpeedyFramework</artifactId>
         <groupId>com.kanasinfo</groupId>
-        <version>0.0.5</version>
+        <version>0.0.6</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-base</artifactId>
-            <version>0.0.5</version>
+            <version>0.0.6</version>
             <type>pom</type>
         </dependency>
     </dependencies>
