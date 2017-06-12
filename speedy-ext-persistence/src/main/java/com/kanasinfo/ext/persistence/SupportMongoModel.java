@@ -25,7 +25,6 @@ public class SupportMongoModel implements Serializable {
     private Date lastModifiedDate;
 
     public SupportMongoModel() {
-        this.id = UUID.randomUUID().toString().replace("-", "");
     }
 
     public String getId() {
