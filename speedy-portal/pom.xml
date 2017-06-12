@@ -6,9 +6,9 @@
         <version>0.0.5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>speedy-protal</artifactId>
+    <artifactId>speedy-portal</artifactId>
     <packaging>war</packaging>
-    <name>speedy-protal Maven Webapp</name>
+    <name>speedy-portal Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -47,10 +47,17 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.37</version>
         </dependency>
     </dependencies>
     <build>
