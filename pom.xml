@@ -18,7 +18,7 @@
         <module>speedy-ext-persistence</module>
         <module>speedy-ext-shiro</module>
         <module>speedy-ext-webmvc</module>
-        <module>speedy-protal</module>
+        <module>speedy-portal</module>
         <module>speedy-admin-actuator</module>
         <module>speedy-ext-mail</module>
         <module>speedy-ext-websocket</module>
