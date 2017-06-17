@@ -24,6 +24,11 @@ public class SupportMongoModel implements Serializable {
     @LastModifiedDate
     private Date lastModifiedDate;
 
+
+    private String createdBy;
+    
+    private String lastModifiedBy;
+    
     public SupportMongoModel() {
     }
 
@@ -49,6 +54,22 @@ public class SupportMongoModel implements Serializable {
 
     public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getLastModifiedBy() {
+        return lastModifiedBy;
+    }
+
+    public void setLastModifiedBy(String lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
     }
 
     @Transient

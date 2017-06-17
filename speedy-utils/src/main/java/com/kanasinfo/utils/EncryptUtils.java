@@ -68,4 +68,11 @@ public class EncryptUtils {
 		}
 		return sb.toString();
 	}
+
+	/**
+	 * 生成摘要
+	 */
+	public static String sha1MessageDigest(String saltKey, String text) {
+		return sha1(String.format("%s{%s}", text, saltKey));
+	}
 }
