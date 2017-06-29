@@ -19,7 +19,7 @@ import java.util.Locale;
  * 定义了mvc适配器
  * Created by gefangshuai on 2015/11/3.
  */
-@Configuration
+//@Configuration
 public class WebMVCConfigurerExtAdapter extends WebMvcConfigurerAdapter {
 
     /**
