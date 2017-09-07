@@ -1,13 +1,16 @@
 package com.kanasinfo.ext.persistence;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.UUID;
 
 /**
  * Created by gefangshuai on 2015/11/13.
@@ -16,7 +19,8 @@ import java.util.UUID;
 @EntityListeners(AuditingEntityListener.class)
 public class SupportMongoModel implements Serializable {
     @Id
-    private String id;
+    @JsonSerialize(using = ObjectIdSerializer.class)
+    private ObjectId id;
 
     @CreatedDate
     private Date createdDate;
@@ -24,19 +28,20 @@ public class SupportMongoModel implements Serializable {
     @LastModifiedDate
     private Date lastModifiedDate;
 
+    @CreatedBy
+    private ObjectId createdBy;
 
-    private String createdBy;
-    
-    private String lastModifiedBy;
-    
+    @LastModifiedBy
+    private ObjectId lastModifiedBy;
+
     public SupportMongoModel() {
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -56,19 +61,19 @@ public class SupportMongoModel implements Serializable {
         this.lastModifiedDate = lastModifiedDate;
     }
 
-    public String getCreatedBy() {
+    public ObjectId getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(String createdBy) {
+    public void setCreatedBy(ObjectId createdBy) {
         this.createdBy = createdBy;
     }
 
-    public String getLastModifiedBy() {
+    public ObjectId getLastModifiedBy() {
         return lastModifiedBy;
     }
 
-    public void setLastModifiedBy(String lastModifiedBy) {
+    public void setLastModifiedBy(ObjectId lastModifiedBy) {
         this.lastModifiedBy = lastModifiedBy;
     }
 
