@@ -18,7 +18,7 @@ import java.util.Date;
 public abstract class SupportController {
 
     public static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd";
-    public static final String DEFAULT_DATETIME_FORMAT = "yyyy-MM-dd HH:mm";
+    public static final String DEFAULT_DATETIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
     private static final String BUSINESS_EXCEPTION_KEY = "bsExpCode";
 
     protected final Logger logger;
@@ -30,7 +30,7 @@ public abstract class SupportController {
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(DEFAULT_DATE_FORMAT);
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DEFAULT_DATETIME_FORMAT);
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 //        binder.registerCustomEditor(ObjectId.class, new ObjectIdEditor());
