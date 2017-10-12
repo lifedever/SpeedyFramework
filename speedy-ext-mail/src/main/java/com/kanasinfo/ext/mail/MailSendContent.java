@@ -23,11 +23,25 @@ public class MailSendContent {
     @Autowired
     private Configuration freemarkerConfig;
 
-    public void sendMail(String from, String to, String subject, String template, Object model) throws MessagingException, IOException, TemplateException {
+    /**
+     * @param from     发件人
+     * @param to       收件人
+     * @param subject  主题
+     * @param template 模板
+     * @param model    数据
+     * @param cc       抄送
+     * @param bcc      密送
+     * @throws MessagingException
+     * @throws IOException
+     * @throws TemplateException
+     */
+    public void sendMail(String from, String[] to, String subject, String template, Object model, String[] cc, String[] bcc) throws MessagingException, IOException, TemplateException {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
         helper.setFrom(from);
         helper.setTo(to);
+        helper.setCc(cc);
+        helper.setBcc(bcc);
         helper.setSubject(subject);
         Template t = freemarkerConfig.getTemplate(template);
         String text = FreeMarkerTemplateUtils.processTemplateIntoString(t, model);

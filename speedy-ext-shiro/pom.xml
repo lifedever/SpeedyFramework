@@ -3,7 +3,7 @@
     <parent>
         <artifactId>SpeedyFramework</artifactId>
         <groupId>com.kanasinfo</groupId>
-        <version>0.0.10</version>
+        <version>0.0.11</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,13 +22,13 @@
         <dependency>
             <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-base</artifactId>
-            <version>0.0.10</version>
+            <version>0.0.11</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-ext-persistence</artifactId>
-            <version>0.0.10</version>
+            <version>0.0.11</version>
         </dependency>
 
         <!--shiro-->
