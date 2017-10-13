@@ -40,8 +40,10 @@ public class MailSendContent {
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
         helper.setFrom(from);
         helper.setTo(to);
-        helper.setCc(cc);
-        helper.setBcc(bcc);
+        if (cc != null && cc.length > 0)
+            helper.setCc(cc);
+        if (bcc != null && bcc.length > 0)
+            helper.setBcc(bcc);
         helper.setSubject(subject);
         Template t = freemarkerConfig.getTemplate(template);
         String text = FreeMarkerTemplateUtils.processTemplateIntoString(t, model);

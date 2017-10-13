@@ -3,7 +3,7 @@
     <parent>
         <artifactId>SpeedyFramework</artifactId>
         <groupId>com.kanasinfo</groupId>
-        <version>0.0.11</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -24,29 +24,29 @@
             <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-base</artifactId>
             <type>pom</type>
-            <version>0.0.11</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-ext-persistence</artifactId>
-            <version>0.0.11</version>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>
             <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-ext-shiro</artifactId>
-            <version>0.0.11</version>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>
             <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-ext-webmvc</artifactId>
-            <version>0.0.11</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-ext-mail</artifactId>
-            <version>0.0.11</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>
