@@ -20,10 +20,12 @@ public class SupportModel implements Serializable {
     private String id;
 
     @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_date")
     private Date createdDate;
 
     @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "last_modified_date")
     private Date lastModifiedDate;
 
