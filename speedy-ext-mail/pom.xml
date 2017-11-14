@@ -3,7 +3,7 @@
     <parent>
         <artifactId>SpeedyFramework</artifactId>
         <groupId>com.kanasinfo</groupId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,7 +22,7 @@
             <groupId>com.kanasinfo</groupId>
             <artifactId>speedy-base</artifactId>
             <type>pom</type>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
