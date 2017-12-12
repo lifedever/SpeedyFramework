@@ -6,10 +6,13 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomi
 import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
@@ -38,10 +41,12 @@ public class WebMVCConfigurerExtAdapter extends WebMvcConfigurerAdapter {
      * @return
      */
     @Bean(name = "localeResolver")
-    public SessionLocaleResolver sessionLocaleResolver() {
-        SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(new Locale("zh", "CN"));
-        return localeResolver;
+    public LocaleResolver localeResolver() {
+        CookieLocaleResolver slr = new CookieLocaleResolver();
+        //设置默认区域,
+        slr.setDefaultLocale(Locale.CHINA);
+        slr.setCookieMaxAge(3600 * 24 * 7);//设置cookie有效期.
+        return slr;
     }
 
     @Override
