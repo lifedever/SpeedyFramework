@@ -13,6 +13,8 @@ public class GsonUtils {
         if (instance == null) {
             GsonBuilder builder = new GsonBuilder();
             builder.addSerializationExclusionStrategy(new IgnoreStrategy());
+            builder.addDeserializationExclusionStrategy(new IgnoreStrategy());
+            builder.excludeFieldsWithoutExposeAnnotation();
             builder.registerTypeAdapter(java.util.Date.class, new DateSerializer()).setDateFormat(DateFormat.LONG);
             builder.registerTypeAdapter(java.util.Date.class, new DateDeserializer()).setDateFormat(DateFormat.LONG);
             for (TypeAdapterFactory adapter : adapterFactories) {
