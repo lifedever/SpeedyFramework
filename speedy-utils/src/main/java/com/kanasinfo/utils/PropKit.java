@@ -29,7 +29,7 @@ public final class PropKit {
      * @return
      */
     public static String getPropValue(String propString, String key) {
-        Map<String, String> props = GsonUtils.getGson().fromJson(propString, Map.class);
+        Map<String, String> props = GsonUtils.getGson(true).fromJson(propString, Map.class);
         return props.get(key);
     }
 }
