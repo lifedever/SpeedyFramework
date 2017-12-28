@@ -24,4 +24,18 @@ public class GsonUtils {
         }
         return instance;
     }
+
+    public synchronized static Gson getGson(TypeAdapterFactory... adapterFactories) {
+        if (instance == null) {
+            GsonBuilder builder = new GsonBuilder();
+            builder.addSerializationExclusionStrategy(new IgnoreStrategy());
+            builder.registerTypeAdapter(java.util.Date.class, new DateSerializer()).setDateFormat(DateFormat.LONG);
+            builder.registerTypeAdapter(java.util.Date.class, new DateDeserializer()).setDateFormat(DateFormat.LONG);
+            for (TypeAdapterFactory adapter : adapterFactories) {
+                builder.registerTypeAdapterFactory(adapter);
+            }
+            instance = builder.create();
+        }
+        return instance;
+    }
 }
