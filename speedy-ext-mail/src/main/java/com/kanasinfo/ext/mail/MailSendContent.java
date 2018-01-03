@@ -35,10 +35,10 @@ public class MailSendContent {
      * @throws IOException
      * @throws TemplateException
      */
-    public void sendMail(String from, String[] to, String subject, String template, Object model, String[] cc, String[] bcc) throws MessagingException, IOException, TemplateException {
+    public void sendMail(String from, String personal, String[] to, String subject, String template, Object model, String[] cc, String[] bcc) throws MessagingException, IOException, TemplateException {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-        helper.setFrom(from);
+        helper.setFrom(from, personal);
         helper.setTo(to);
         if (cc != null && cc.length > 0)
             helper.setCc(cc);
