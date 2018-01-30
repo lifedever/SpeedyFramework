@@ -14,36 +14,36 @@ import java.util.List;
  */
 @Transactional(readOnly = true)
 public abstract class SupportService<T, ID extends Serializable> {
-    protected SupportRepository<T, ID> supportRepository;
+    protected abstract SupportRepository<T, ID> getRepository();
 
     public T findOne(ID id) {
-        return supportRepository.findOne(id);
+        return getRepository().findOne(id);
     }
 
     @Transactional
     public T save(T t) {
-        return supportRepository.save(t);
+        return getRepository().save(t);
     }
 
     public List<T> findAll() {
-        return supportRepository.findAll();
+        return getRepository().findAll();
     }
 
     public List<T> findAll(Sort sort) {
-        return supportRepository.findAll(sort);
+        return getRepository().findAll(sort);
     }
 
     public Page<T> findAll(Pageable pageable){
-        return supportRepository.findAll(pageable);
+        return getRepository().findAll(pageable);
     }
 
     @Transactional
     public void delete(ID id) {
-        supportRepository.delete(id);
+        getRepository().delete(id);
     }
 
     public long count(){
-        return supportRepository.count();
+        return getRepository().count();
     }
 
 }
