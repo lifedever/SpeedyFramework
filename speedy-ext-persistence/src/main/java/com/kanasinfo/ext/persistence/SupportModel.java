@@ -1,6 +1,8 @@
 package com.kanasinfo.ext.persistence;
 
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -29,6 +31,14 @@ public class SupportModel implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "last_modified_date")
     private Date lastModifiedDate;
+
+    @CreatedBy
+	@Column(name = "created_by")
+    private String createdBy;
+
+    @LastModifiedBy
+	@Column(name = "last_modified_by")
+	private String LastModifiedBy;
 
     public SupportModel() {
         this.id = UUID.randomUUID().toString().replace("-", "");
@@ -80,4 +90,20 @@ public class SupportModel implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public String getLastModifiedBy() {
+		return LastModifiedBy;
+	}
+
+	public void setLastModifiedBy(String lastModifiedBy) {
+		LastModifiedBy = lastModifiedBy;
+	}
 }
